@@ -39,7 +39,7 @@ function App() {
 
   const fetchCats = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/cats');
+      const response = await fetch('https://aplied-project-back.onrender.com/api/cats');
       if (!response.ok) {
         throw new Error('Failed to fetch cats');
       }
@@ -70,7 +70,7 @@ function App() {
       formData.append('pictures', selectedFiles[i]);
     }
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/cats/add', {
+      const response = await fetch('https://aplied-project-back.onrender.com/api/cats/add', {
         method: 'POST',
         body: formData
       });
@@ -102,7 +102,7 @@ function App() {
   const deleteCat = async (id) => {
     if (!window.confirm('Are you sure you want to delete this cat?')) return;
     try {
-      const response = await fetch(`http://127.0.0.1:5000/api/cats/${id}/delete`, { method: 'DELETE' });
+      const response = await fetch(`https://aplied-project-back.onrender.com/api/cats/${id}/delete`, { method: 'DELETE' });
       if (!response.ok) {
         throw new Error('Failed to delete cat');
       }
@@ -243,7 +243,7 @@ function App() {
                           <Carousel.Item key={index}>
                             <img
                               className="d-block w-100"
-                              src={`http://127.0.0.1:5000/static/uploads/${image}`}
+                              src={`https://aplied-project-back.onrender.com/static/uploads/${image}`}
                               alt={`Slide ${index}`}
                               style={{ height: '300px', objectFit: 'cover' }}
                             />
